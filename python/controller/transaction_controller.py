@@ -13,8 +13,8 @@ def create_incoming_transaction(conn, description, nominal):
     ]
     cursor.executemany("INSERT INTO transactions (description,nominal,type) VALUES (?,?,?)", data_to_insert)
     conn.commit()
-    
-    get_all(conn)
+    print("Berhasil menambahkan transaksi masuk")
+    # get_all(conn)
 
 def create_outbound_transaction(conn, description, nominal):
     cursor = conn.cursor()
@@ -23,8 +23,8 @@ def create_outbound_transaction(conn, description, nominal):
     ]
     cursor.executemany("INSERT INTO transactions (description,nominal,type) VALUES (?,?,?)", data_to_insert)
     conn.commit()
-    
-    get_all(conn)
+    print("Berhasil menambahkan transaksi keluar")
+    # get_all(conn)
 
 def show_saldo(conn):
     cursor = conn.cursor()

@@ -12,22 +12,26 @@ def run(conn):
 
     if input_menu == 1:
         contact_controller.get_all(conn=conn)
+        print("\n")
         run(conn)
     elif input_menu == 2:
         print("Silahkan mengisi data yang dibutuhkan")
         name = input("Masukan nama kontak: ")
         phone = input("Masukan nomor kontak: ")
         contact_controller.create(conn, name, phone)
+        print("\n")
         run(conn)
     elif input_menu == 3:
         name = input("Nama kontak yang dicari: ")
         contact_controller.get_by_name(conn, name)
+        print("\n")
         run(conn)
     elif input_menu == 4:
         name = input("Nama kontak yang dicari: ")
         contact_controller.delete_by_name(conn, name)
+        print("\n")
         run(conn)
     elif input_menu == 5:
-        home_menu.run()
+        home_menu.run(conn=conn)
     else:
         print("menu yang anda pilih salah")

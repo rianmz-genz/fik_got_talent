@@ -13,7 +13,7 @@ def create(conn, name, phone):
     ]
     cursor.executemany("INSERT INTO contacts (name,phone) VALUES (?,?)", data_to_insert)
     conn.commit()
-    
+    print("Berhasil menambahkan kontak")
     get_all(conn)
     
 def get_by_name(conn, name):
@@ -36,6 +36,7 @@ def delete_by_name(conn, name):
             sql_query_delete = f"DELETE FROM contacts WHERE name = '{name}'"
             cursor.execute(sql_query_delete)
             conn.commit()
+            print("Berhasil menghapus kontak")
             get_all(conn)
         else:
             print(f"Data dengan nama {name} tidak bisa dihapus karena tidak ditemukan")
