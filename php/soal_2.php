@@ -76,7 +76,7 @@ function checkValidString($s)
     }
 
     return "NO";
-}   
+}
 
 $tests = [
     [
@@ -96,10 +96,8 @@ $tests = [
 foreach ($tests as $key => $test) {
     $result = checkValidString($test['input']);
     if ($result == $test["expected"]) {
-        echo $key . ": Benar" . PHP_EOL ;
+        echo $key . ": Benar" . PHP_EOL;
     } else {
-        echo $key . ": Salah expected:" . $test["expected"] . " but, result:" . $result . PHP_EOL ;
+        echo $key . ": Salah expected:" . $test["expected"] . " but, result:" . $result . PHP_EOL;
     }
 }
-
-

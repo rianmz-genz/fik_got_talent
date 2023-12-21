@@ -35,7 +35,8 @@ function encryptString($cheap)
     return $encrypted;
 }
 
-function descryptString($encrypted) {
+function descryptString($encrypted)
+{
 
     $arr = str_split($encrypted);
 
@@ -71,5 +72,5 @@ function descryptString($encrypted) {
 $result = encryptString("aku suka makan");
 echo $result . PHP_EOL;
 
-$result = descryptString("NXH FHXN ZNXNA");
+$result = descryptString($result);
 echo $result . PHP_EOL;
